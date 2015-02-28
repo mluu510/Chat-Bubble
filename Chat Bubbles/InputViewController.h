@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class ChatMessage;
+
 @protocol InputViewControllerDelegate <NSObject>
 
-- (void)didReceivedInputText:(NSString *)text;
+//- (void)didReceivedInputText:(NSString *)text;
+- (void)didReceivedChatMessage:(ChatMessage *)chatMessage;
 
 @end
 

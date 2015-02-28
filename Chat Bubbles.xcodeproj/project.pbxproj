@@ -16,6 +16,7 @@
 		0A6385281AA1BD4700EDD30B /* Chat_BubblesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385271AA1BD4700EDD30B /* Chat_BubblesTests.m */; };
 		0A6385331AA1D41200EDD30B /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385321AA1D41200EDD30B /* ChatTableViewController.m */; };
 		0A6385361AA1DB1C00EDD30B /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385351AA1DB1C00EDD30B /* InputViewController.m */; };
+		0A6385391AA1E70400EDD30B /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385381AA1E70400EDD30B /* ChatMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		0A6385321AA1D41200EDD30B /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
 		0A6385341AA1DB1C00EDD30B /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
 		0A6385351AA1DB1C00EDD30B /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		0A6385371AA1E70400EDD30B /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
+		0A6385381AA1E70400EDD30B /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				0A6385321AA1D41200EDD30B /* ChatTableViewController.m */,
 				0A6385341AA1DB1C00EDD30B /* InputViewController.h */,
 				0A6385351AA1DB1C00EDD30B /* InputViewController.m */,
+				0A6385371AA1E70400EDD30B /* ChatMessage.h */,
+				0A6385381AA1E70400EDD30B /* ChatMessage.m */,
 				0A6385151AA1BD4700EDD30B /* Main.storyboard */,
 				0A6385181AA1BD4700EDD30B /* Images.xcassets */,
 				0A63851A1AA1BD4700EDD30B /* LaunchScreen.xib */,
@@ -232,6 +237,7 @@
 				0A6385141AA1BD4700EDD30B /* ChatViewController.m in Sources */,
 				0A6385111AA1BD4700EDD30B /* AppDelegate.m in Sources */,
 				0A63850E1AA1BD4700EDD30B /* main.m in Sources */,
+				0A6385391AA1E70400EDD30B /* ChatMessage.m in Sources */,
 				0A6385361AA1DB1C00EDD30B /* InputViewController.m in Sources */,
 				0A6385331AA1D41200EDD30B /* ChatTableViewController.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "InputViewController.h"
+#import "ChatMessage.h"
 
 @interface InputViewController () <UITextFieldDelegate>
 
@@ -54,7 +55,11 @@
 
 - (IBAction)sendPressed:(id)sender {
     NSString *text = self.inputTextField.text;
-    [self.delegate didReceivedInputText:text];
+    
+    ChatMessage *chatMessage = [[ChatMessage alloc] initWithMessage:text];
+    
+//    [self.delegate didReceivedInputText:text];
+    [self.delegate didReceivedChatMessage:chatMessage];
     self.inputTextField.text = nil;
     self.sendButton.enabled = NO;
 }

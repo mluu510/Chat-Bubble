@@ -8,6 +8,7 @@
 
 #import "ChatTableViewController.h"
 #import "InputViewController.h"
+#import "ChatMessage.h"
 
 @interface ChatTableViewController () <UITableViewDataSource, UITableViewDelegate, InputViewControllerDelegate>
 
@@ -42,8 +43,14 @@
     [self.view endEditing:YES];
 }
 
-- (void)didReceivedInputText:(NSString *)text {
-    [self.messages addObject:text];
+//- (void)didReceivedInputText:(NSString *)text {
+//    [self.messages addObject:text];
+//    [self.chatTableView reloadData];
+//}
+
+- (void)didReceivedChatMessage:(ChatMessage *)chatMessage
+{
+    [self.messages addObject:chatMessage];
     [self.chatTableView reloadData];
 }
 
@@ -55,8 +62,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Chat Cell" forIndexPath:indexPath];
-    NSString *message = self.messages[indexPath.row];
-    cell.textLabel.text = message;
+    ChatMessage *chatMessage = self.messages[indexPath.row];
+    cell.textLabel.text = chatMessage.message;
+    NSString *timestampString = [NSDateFormatter localizedStringFromDate:chatMessage.timestamp
+                                                               dateStyle:NSDateFormatterNoStyle
+                                                               timeStyle:NSDateFormatterShortStyle];
+    cell.detailTextLabel.text = timestampString;
     return cell;
 }
 
