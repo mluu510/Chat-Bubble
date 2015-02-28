@@ -14,6 +14,8 @@
 		0A6385191AA1BD4700EDD30B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6385181AA1BD4700EDD30B /* Images.xcassets */; };
 		0A63851C1AA1BD4700EDD30B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A63851A1AA1BD4700EDD30B /* LaunchScreen.xib */; };
 		0A6385281AA1BD4700EDD30B /* Chat_BubblesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385271AA1BD4700EDD30B /* Chat_BubblesTests.m */; };
+		0A6385331AA1D41200EDD30B /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385321AA1D41200EDD30B /* ChatTableViewController.m */; };
+		0A6385361AA1DB1C00EDD30B /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6385351AA1DB1C00EDD30B /* InputViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		0A6385211AA1BD4700EDD30B /* Chat BubblesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat BubblesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6385261AA1BD4700EDD30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6385271AA1BD4700EDD30B /* Chat_BubblesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chat_BubblesTests.m; sourceTree = "<group>"; };
+		0A6385311AA1D41200EDD30B /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
+		0A6385321AA1D41200EDD30B /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		0A6385341AA1DB1C00EDD30B /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		0A6385351AA1DB1C00EDD30B /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				0A6385101AA1BD4700EDD30B /* AppDelegate.m */,
 				0A6385121AA1BD4700EDD30B /* ChatViewController.h */,
 				0A6385131AA1BD4700EDD30B /* ChatViewController.m */,
+				0A6385311AA1D41200EDD30B /* ChatTableViewController.h */,
+				0A6385321AA1D41200EDD30B /* ChatTableViewController.m */,
+				0A6385341AA1DB1C00EDD30B /* InputViewController.h */,
+				0A6385351AA1DB1C00EDD30B /* InputViewController.m */,
 				0A6385151AA1BD4700EDD30B /* Main.storyboard */,
 				0A6385181AA1BD4700EDD30B /* Images.xcassets */,
 				0A63851A1AA1BD4700EDD30B /* LaunchScreen.xib */,
@@ -222,6 +232,8 @@
 				0A6385141AA1BD4700EDD30B /* ChatViewController.m in Sources */,
 				0A6385111AA1BD4700EDD30B /* AppDelegate.m in Sources */,
 				0A63850E1AA1BD4700EDD30B /* main.m in Sources */,
+				0A6385361AA1DB1C00EDD30B /* InputViewController.m in Sources */,
+				0A6385331AA1D41200EDD30B /* ChatTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

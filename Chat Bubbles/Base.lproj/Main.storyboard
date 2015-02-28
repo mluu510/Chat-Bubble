@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKJ-iB-jUX">
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="266" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat Table View Controller-->
         <scene sceneID="xlO-X6-aNJ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="KjN-nN-TCB" sceneMemberID="viewController">
+                <viewController id="KjN-nN-TCB" customClass="ChatTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SeN-YT-bal"/>
                         <viewControllerLayoutGuide type="bottom" id="7vA-E5-hMq"/>
@@ -71,11 +71,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="TQu-pk-loQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TQu-pk-loQ" userLabel="Chat Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="552"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="HlV-FD-mJl" detailTextLabel="hy8-OW-yZP" style="IBUITableViewCellStyleSubtitle" id="CzL-cz-meQ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Chat Cell" textLabel="HlV-FD-mJl" detailTextLabel="hy8-OW-yZP" style="IBUITableViewCellStyleSubtitle" id="CzL-cz-meQ">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CzL-cz-meQ" id="6VU-p9-TpM">
@@ -98,6 +98,10 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KjN-nN-TCB" id="Bws-kR-h68"/>
+                                    <outlet property="delegate" destination="KjN-nN-TCB" id="d48-Uk-xGE"/>
+                                </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxu-ak-qPk">
                                 <rect key="frame" x="0.0" y="552" width="600" height="48"/>
@@ -105,7 +109,7 @@
                                     <constraint firstAttribute="height" constant="48" id="j0f-8j-JSB"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="LfF-GC-tVs" kind="embed" id="GKp-Rx-jy2"/>
+                                    <segue destination="LfF-GC-tVs" kind="embed" identifier="Input View Controller" id="GKp-Rx-jy2"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -121,15 +125,19 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="chatTableView" destination="TQu-pk-loQ" id="C1f-Tl-fRe"/>
+                        <outlet property="inputContainer" destination="uxu-ak-qPk" id="sN5-1k-07n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DON-4x-tpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="1376"/>
         </scene>
-        <!--View Controller-->
+        <!--Input View Controller-->
         <scene sceneID="LsV-mR-ukZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="LfF-GC-tVs" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="LfF-GC-tVs" customClass="InputViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hzw-7q-aBe"/>
                         <viewControllerLayoutGuide type="bottom" id="CV6-HO-QUn"/>
@@ -138,16 +146,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w93-D0-scs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a message here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w93-D0-scs">
                                 <rect key="frame" x="16" y="9" width="524" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="inputTextFieldChanged:" destination="LfF-GC-tVs" eventType="editingChanged" id="c3m-2F-N4t"/>
+                                    <outlet property="delegate" destination="LfF-GC-tVs" id="8gK-oX-YiP"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-OY-p6x">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-OY-p6x">
                                 <rect key="frame" x="548" y="10" width="36" height="30"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendPressed:" destination="LfF-GC-tVs" eventType="touchUpInside" id="1oN-H0-i7D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +175,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="inputTextField" destination="w93-D0-scs" id="7H6-TM-3Rt"/>
+                        <outlet property="sendButton" destination="Yx7-OY-p6x" id="zAC-9z-4JS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBy-e4-dpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

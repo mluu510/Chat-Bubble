@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UITapGestureRecognizer *dismissKBTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
-    [self.view addGestureRecognizer:dismissKBTap];
+//    UITapGestureRecognizer *dismissKBTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+//    [self.view addGestureRecognizer:dismissKBTap];
     
     [self registerForKeyboardNotifications];
 }
@@ -67,7 +67,6 @@
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-    NSLog(@"will be hidden called");
     NSDictionary* info = [aNotification userInfo];
     NSNumber *durationNumber = info[UIKeyboardAnimationDurationUserInfoKey];
     
